@@ -1,4 +1,5 @@
 .App {
+  width: fit-content;
   margin: 10px;
   padding: 15px, 40px;
   font-family: cursor, monospace;
@@ -7,6 +8,10 @@
 a {
   text-decoration: none;
   color: #9C8394;
+}
+
+a:hover{
+  color: #d2aac5;
 }
 
 .line {
@@ -29,7 +34,6 @@ p {
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
-  margin: 0;
   letter-spacing: 0.05em;
   animation: typing 0.5s steps(30, end);
   color: #519975;
@@ -43,6 +47,18 @@ p {
 
 .info {
   color: #B89076;
+}
+
+.onhover-white:hover {
+  color: rgb(201, 201, 201);
+}
+
+.onhover-normal:hover {
+  color: #B89076;
+}
+
+.onhover-green:hover {
+  color: #73ABAD;
 }
 
 .info span {
@@ -75,7 +91,24 @@ p {
 .keyword {
   color: #73ABAD;
   text-shadow: 0 0 5px #73ABAD;
-  width: 150px;
+  width: 180px;
   margin-left: 20px;
   display: inline-block;
+}
+
+.education {
+  margin-left: 20px;
+}
+
+.education-title { 
+  color: rgb(228, 228, 228);
+}
+
+.about-box{
+  box-sizing: border-box;
+  width: 75vw;
+  margin: 20px;
+  text-align: justify;
+  border: 1px dotted aliceblue;
+  padding: 0px 20px;
 }

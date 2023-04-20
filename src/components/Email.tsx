@@ -1,4 +1,7 @@
 export default function Email() {
+    setTimeout(() => {
+        window.open('mailto:subrotokumar@outlook.in')
+    }, 1000);
     return (
         <div className="link">
             <p className="info">Opening mailto:</p>

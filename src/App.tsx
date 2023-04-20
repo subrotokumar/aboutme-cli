@@ -1,26 +1,34 @@
-import { FC, useState, useRef } from 'react'
+import { useState, useRef, useEffect, FC } from 'react'
 import './App.css'
 import Heading from './components/Heading';
 import Help from './components/Help';
 import Social from './components/Social';
 import Email from './components/Email';
+import Skills from './components/Skills';
+import Resume from './components/Resume';
+import Eduaction from './components/Eduaction';
+import About from './components/About';
 
 
 
-function App() {
+function App() {  
   const [cli, setCli] = useState('');
   const [commandList, setCommandList] = useState(
     [
       <Heading />
     ],
   );
+  
+  useEffect(() => {
+    window.scrollTo(0, document.body.scrollHeight)
+  }, [commandList])
 
   const [historyList, sethistoryList] = useState<string[]>([]);
 
   function addCliLine(script: String) {
     return (
       <div className='cli'>
-        <p className='cli'>coders@subrotokumar.com:~$</p>
+        <p className='cli'>visitor@aboutme-cli:~$</p>
         <p className='command'
         >{script}
         </p>
@@ -28,45 +36,59 @@ function App() {
     );
   }
 
+  function addElement(Comp: FC) {
+    setCommandList([
+      ...commandList,
+      addCliLine(cli),
+      <Comp/>
+    ]);
+  }
+
   function handleOperation(command: string) {
     switch (command.toLowerCase()) {
+      case '':
+        case 'hi':
+        setCommandList([
+          ...commandList,
+          addCliLine(cli),
+        ]);
+        break;
       case 'about':
-        setCommandList([
-          ...commandList,
-          addCliLine(cli),
-          <p className="header">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ex doloremque ut delectus. Debitis enim iste et ad. Quasi facere culpa doloribus asperiores minima cupiditate beatae blanditiis, mollitia atque alias neque dignissimos perspiciatis magnam nobis? Iusto quidem accusamus ab molestiae saepe fuga eligendi libero quas labore! Eaque beatae qui facilis odit similique officia! Distinctio, voluptatibus inventore esse veniam, sequi vitae fuga earum tempora voluptatem recusandae odit corporis, culpa ipsum perferendis ut eum fugit error nam. Vel eos ea obcaecati. Laudantium harum illo aliquid nostrum qui molestias architecto. Quis, dicta tenetur? Maiores praesentium debitis quas veniam laborum? Magni explicabo corrupti quam?</p>,
-        ]);
+        addElement(About);
         break;
+
       case 'banner':
-        setCommandList([
-          ...commandList,
-          addCliLine(cli),
-          <Heading />,
-        ]);
+        addElement(Heading);
         break;
+
+      case 'cls':
       case 'clear':
         setCommandList([]);
         break;
+
       case 'education':
+        addElement(Eduaction);
         break;
+
       case 'email':
+        addElement(Email);
+        break;
+
+      case 'hello':
+      case 'hey':
+      case 'hi':
         setCommandList([
           ...commandList,
           addCliLine(cli),
-          <Email />
+          <><p className="info">Hello, welcome to my interactive web terminal.</p>
+          <p className="info">For a list of available commands, type '<span>help</span>'.</p></>
         ]);
-        setTimeout(() => {
-          window.open('mailto:subrotokumar@outlook.in')
-        }, 1000);
         break;
+
       case 'help':
-        setCommandList([
-          ...commandList,
-          addCliLine(cli),
-          <Help />,
-        ]);
-        setInterval
+        addElement(Help);
         break;
+
       case 'history':
         setCommandList([
           ...commandList,
@@ -78,14 +100,18 @@ function App() {
           </div>),
         ]);
         break;
-      case 'skill':
+
+      case 'resume': 
+        addElement(Resume);
         break;
+
+      case 'skills':
+      case 'skill':
+        addElement(Skills);
+        break;
+        
       case 'social':
-        setCommandList([
-          ...commandList,
-          addCliLine(cli),
-          <Social />,
-        ]);
+        addElement(Social);
         break;
 
       default:
@@ -108,7 +134,7 @@ function App() {
         })
       }
       <div className='cli'>
-        <p className='cli'>coders@subrotokumar.com:~$</p>
+        <p className='cli'>visitor@aboutme-cli:~$</p>
         <input type='text'
           className='command'
           value={cli}
