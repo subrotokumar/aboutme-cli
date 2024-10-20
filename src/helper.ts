@@ -28,17 +28,17 @@ const help: string[][] = [
 ];
 
 const social: string[][] = [
-    ['Website', 'https://subrotokumar.com'],
+    ['Website', 'https://subrotokumar.dev'],
     ['Github', 'https://github.com/subrotokumar'],
     ['Linkedin', 'https://www.linkedin.com/in/kumarsubroto'],
-    ['Twitter', 'https://twitter.com/isubroto'],
-    ['Blog', 'https://subrotokumar.me'],
+    ['Twitter', 'https://twitter.com/isubrotokumar'],
+    ['Blog', 'https://blog.subrotokumar.dev'],
 ];
 
 const skills: SkillSet[] = [
     {
         category: 'Programming',
-        skills: ['Java', 'JavaScript', 'Dart', 'Solidity', 'SQL']
+        skills: ['Java', 'Go' , 'JavaScript', 'Typescript', 'Dart', 'SQL']
     },
     {
         category: 'Mobile',
@@ -61,22 +61,37 @@ const skills: SkillSet[] = [
         skills: ['']
     },
     {
-        category: '├── Frontend',
-        skills: ['HTML5', 'CSS3', 'REACT', 'Next.js']
+        category: '├── Concepts',
+        skills: [ 'Monoliths','Microservices', "Event-Driven System", "System Design"]
+    }, 
+    {
+        category: '├── Beckend',
+        skills: [ "REST API", "GraphQL", "gRPC", "WebSocket"],
+    }, 
+    {
+        category: '├── Frameworks',
+        skills: [ "Spring", "Gin/Echo/Fiber", "Express", "Nest.JS", "FastAPI"],
+    }, 
+    {
+        category: '├── Databases',
+        skills: ['Postgres', "MongoDB"]
+    }, 
+    {
+        category: '├── Message Broker',
+        skills: ["RabbitMQ", "Kafka", "Redis"]
+    }, 
+    {
+        category: '└── Frontend',
+        skills: ['React', 'Next.js']
     },
     {
-        category: '└── Beckend',
-        skills: ['Node', 'Express', 'MongoDB', 'REST API', 'GraphQL']
-    }, {
         category: 'Blockchain',
         skills: ['Solidity', 'Hardhat', 'Wagmi']
-    }, {
+    }, 
+    {
         category: 'Other',
-        skills: ['Git/GitHub', 'Postgres', 'Linux']
-    }, {
-        category: 'Soft Skills',
-        skills: ['Problem Solving', 'Collaboration']
-    }
+        skills: ['Git/GitHub', 'Ngnix', 'Linux',"AWS", "Docker", "CI/CD"]
+    }, 
 ]
 
 const education: EducationHistory[] = [
@@ -85,7 +100,7 @@ const education: EducationHistory[] = [
         location: 'Haldia, WB',
         degree: 'BTech in Electronics and Communication Enginering',
         duration: 'August, 2019 - July, 2023',
-        grade: '9.0 GPA'
+        grade: '8.9 GPA'
     },
     {
         name: 'De Nobili School - CMRI',
@@ -96,9 +111,14 @@ const education: EducationHistory[] = [
     },
 ]
 
-const about = ["Engineering student With a strong background in defining requirements and implementing complex applications using various programming languages and technologies, I am eager to take on new challenges and expand my skillset.",
-    "My expertise includes building smart contracts and decentralized applications for Ethereum and other EVM- compatible chains, as well as developing cross - platform apps for mobile platforms using Flutter.I am highly skilled in Java, Javascript, Mobile Application Development (Android / iOS), Blockchain, Smart Contracts, and Database with Postgres.",
-    "In addition to my technical abilities, I am always exploring new technologies and staying up - to - date on the latest trends in the tech industry.I am also an avid reader of light novels, which helps me stay creative and imaginative."]
+const about = [
+    "Hi, I'm Subroto Kumar 👾",
+    "As a Software Engineer, I'm deeply obsessed about achieving perfect balance between functionality and design.\nMy journey has been about taking complex problems—whether it's building resilient backend systems, optimizing microservices, or designing sleek front-end interfaces—and turning them into solutions that feel effortless for users. From scaling distributed architectures on cloud to integrating blockchain solutions and crafting mobile apps with Flutter, I’ve always found my flow where creativity intersects with clean, efficient code.",
+    "My goal? To build experiences that not only work flawlessly but also leave a lasting impression.",
+
+
+    "Stuck on a tricky bug? Let’s tackle it together! Every technical challenge is like a puzzle—whether it’s debugging tricky performance bottlenecks, optimizing APIs, or handling real-time data. My approach is rooted in problem-solving, breaking down complex issues and turning them into streamlined, maintainable solutions. I enjoy diving into the code, understanding the underlying architecture, and crafting something that not only function seamlessly but also resonate with users and inspire fellow developers."
+]
 
 export {
     help,

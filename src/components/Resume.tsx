@@ -1,4 +1,4 @@
-import resume from "../assets/download-resume.pdf"
+import resume from "../assets/resume.pdf"
 
 export default function Resume() {
     setTimeout(() => {
