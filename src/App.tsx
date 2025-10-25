@@ -8,6 +8,7 @@ import Skills from './components/Skills';
 import Resume from './components/Resume';
 import Eduaction from './components/Eduaction';
 import About from './components/About';
+import Experience from './components/Experience';
 
 
 
@@ -100,7 +101,11 @@ function App() {
           </div>),
         ]);
         break;
-
+      case "experience":
+      case "company":
+      case "work":
+        addElement(Experience);
+        break;
       case 'resume': 
         addElement(Resume);
         break;

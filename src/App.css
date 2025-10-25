@@ -45,10 +45,6 @@ p {
 }
 
 
-.info {
-  color: #B89076;
-}
-
 .onhover-white:hover {
   color: rgb(201, 201, 201);
 }
@@ -111,4 +107,34 @@ p {
   text-align: justify;
   border: 1px dotted aliceblue;
   padding: 0px 20px;
+}
+
+/* Experience */
+.company-name {
+  color: #e6e6e6; /* white */
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.role {
+  color: #73C2FF; /* light blue */
+  margin-left: 10px;
+}
+
+.info {
+  color: #B89076;
+  margin-left: 20px;
+  line-height: 1.4em;
+}
+
+.info p {
+  white-space: pre-wrap;
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  animation: typing 0.5s steps(30, end);
+}
+
+.info p::before {
+  content: '└── ';
+  color: #73ABAD;
 }

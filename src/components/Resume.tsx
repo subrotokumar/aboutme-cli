@@ -1,5 +1,4 @@
-import resume from "../assets/resume.pdf"
-
+const resume = "https://drive.google.com/file/d/1iFe5jQU4b9Rwnyq8dHNDSPJoB9Zw8LhI/view?usp=sharing"
 export default function Resume() {
     setTimeout(() => {
         window.open(`${resume}`)
