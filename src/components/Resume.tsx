@@ -1,4 +1,4 @@
-const resume = "https://drive.google.com/file/d/1iFe5jQU4b9Rwnyq8dHNDSPJoB9Zw8LhI/view?usp=sharing"
+const resume = "https://gitlab.com/subrotokumar.dev/public/-/raw/main/resume.pdf?ref_type=heads&inline=true"
 export default function Resume() {
     setTimeout(() => {
         window.open(`${resume}`)

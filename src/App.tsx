@@ -101,6 +101,7 @@ function App() {
           </div>),
         ]);
         break;
+      case "exp":
       case "experience":
       case "company":
       case "work":

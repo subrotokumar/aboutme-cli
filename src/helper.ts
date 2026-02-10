@@ -11,12 +11,15 @@ type EducationHistory = {
     grade: string;
 };
 
-type Experience = {
-    company: string;
+type Position = {
     role: string;
     location: string;
     duration: string;
     responsibilities: string[];
+}
+type Experience = {
+    company: string;
+    position: Array<Position>
 };
 
 type Project = {
@@ -55,8 +58,8 @@ const skills: SkillSet[] = [
     { category: '├── Backend', skills: ['REST API', 'GraphQL', 'gRPC', 'WebSocket'] },
     { category: '├── Frameworks', skills: ['Spring Boot', 'FastAPI', 'Gin/Echo/Fiber', 'Express', 'NestJS'] },
     { category: '├── Databases', skills: ['Postgres', 'MongoDB', 'TimescaleDB'] },
-    { category: '├── Message Broker', skills: ['RabbitMQ', 'Kafka', 'Redis'] },
-    { category: '└── Frontend', skills: ['React', 'Next.js'] },
+    { category: '├── Message Broker', skills: ['Kafka','RabbitMQ', 'SQS', 'Redis'] },
+    { category: '└── Frontend', skills: ['React'] },
     { category: 'Cloud / DevOps', skills: ['AWS', 'Azure', 'Kubernetes (AKS, EKS, GKE)', 'Docker', 'Nginx', 'Jenkins', 'GitLab CI/CD', 'Linux'] },
     { category: 'Mobile', skills: [] },
     { category: '├── Flutter', skills: ['Dart', 'Flutter', 'Riverpod', 'Provider'] },
@@ -81,35 +84,55 @@ const about = [
 const experience: Experience[] = [
     {
         company: 'Capgemini',
-        role: 'Senior Software Engineer',
-        location: 'Mumbai',
-        duration: 'March 2024 – Present',
-        responsibilities: [
-            'Engineered Spring Boot–Kafka event-driven microservices for 3000+ service desk agents',
-            'Reduced manual workload by 60% and improving task allocation by 40%.',
-            'Delivered enterprise-grade Kubernetes deployment using Helm & ArgoCD, with GitLab pipelines for automated builds, security and quality checks.',
-            'Developed Agentic AI Business Analyst leveraging LangChain & LangGraph, enabling autonomous decision-making workflows with 3× faster insights.',
-            'Built high-performance RAG backend with PGVector, improving vector search latency by 40% and supporting 10k+ daily users.'
+        position: [
+            {
+                role: 'Sr. Software Engineer',
+                location: 'Mumbai',
+                duration: 'October 2025 – Present',
+                responsibilities: [
+                    'Engineered Spring Boot–Kafka event-driven microservices for 3000+ service desk agents',
+                    'Reduced manual workload by 60% and improving task allocation by 40%.',
+                    'Delivered enterprise-grade Kubernetes deployment using Helm & ArgoCD, with GitLab pipelines for automated builds, security and quality checks.',
+                    'Developed Agentic AI Business Analyst leveraging LangChain & LangGraph, enabling autonomous decision-making workflows with 3× faster insights.',
+                ]
+            },
+            {
+                role: 'Software Engineer',
+                location: 'Mumbai',
+                duration: 'March 2024 – September 2025',
+                responsibilities: [
+                    'Built high-performance RAG backend with PGVector, improving vector search latency by 40% and supporting 10k+ daily users.',
+                    'Optimized query performance through advanced indexing and sharding strategies.',
+                    'Designed LLM generation microservice using FastAPI, integrating Azure OpenAI, Amazon Bedrock, and Ollama, ensuring seamless multi-LLM support.',
+                    'Developed a scalable PaaS solution for deploying frontend web applications, leveraging Spring Boot and Node.js within a microservices architecture.'
+                ]
+            }
         ]
     },
     {
         company: 'LTI Mindtree',
-        role: 'Graduate Engineer Trainee Intern',
-        location: 'Remote',
-        duration: 'August 2023 – October 2023',
-        responsibilities: [
-            'Gained expertise in Java, AWS (S3, RDS, EC2, IAM, Billing), Terraform, DBMS, and Linux.',
-            'Completed Ignite Cloud Technology track with 86% score, gaining practical cloud infrastructure experience.'
-        ]
+        position: [{
+            role: 'Graduate Engineer Trainee Intern',
+            location: 'Remote',
+            duration: 'August 2023 – October 2023',
+            responsibilities: [
+                'Gained expertise in Java, AWS (S3, RDS, EC2, IAM, Billing), Terraform, DBMS, and Linux.',
+                'Completed Ignite Cloud Technology track with 86% score, gaining practical cloud infrastructure experience.'
+            ]
+        },],
     },
     {
         company: 'Ridobiko',
-        role: 'Flutter Developer Intern',
-        location: 'Gurugram',
-        duration: 'November 2022 – April 2023',
-        responsibilities: [
-            'Integrated DigiLocker for e-KYC with Flutter, OAuth 2.0, REST API.',
-            'Refactored app codebase, improving performance by 20% and reducing size by 15%.'
+        position: [
+            {
+                role: 'Flutter Developer Intern',
+                location: 'Gurugram',
+                duration: 'November 2022 – April 2023',
+                responsibilities: [
+                    'Integrated DigiLocker for e-KYC with Flutter, OAuth 2.0, REST API.',
+                    'Refactored app codebase, improving performance by 20% and reducing size by 15%.'
+                ]
+            }
         ]
     }
 ];

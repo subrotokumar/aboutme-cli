@@ -3,15 +3,17 @@ import { experience } from '../helper';
 function Experience() {
   return (
     <div className="experience">
-        <br />
+      <br />
       {experience.map((exp, i) => (
-        <div key={"company"+i}>
+        <div key={"company" + i}>
           <p className="company-name">&nbsp;&nbsp;{exp.company}</p>
-          <p className="role">&nbsp;{exp.role}</p>
-          <p className="info">{exp.duration}</p>
-          {exp.responsibilities.map((r, j) => (
-            <p key={'responsibilities'+j} className="info">└── {r}</p>
-          ))}
+          {exp.position.map((position, j) => (<>
+            <p className="role">&nbsp;{position.role}</p>
+            <p className="info">{position.duration}</p>
+            {position.responsibilities.map((r, k) => (
+              <p key={'responsibilities' + j} className="info">└── {r}</p>
+            ))}
+          </>))}
           {i !== experience.length - 1 && <br />}
         </div>
       ))}
